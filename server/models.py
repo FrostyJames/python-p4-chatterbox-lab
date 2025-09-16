@@ -17,3 +17,5 @@ class Message(db.Model, SerializerMixin):
     username = db.Column(db.String, nullable=False)
     created_at = db.Column(db.DateTime, default=datetime.utcnow)
     updated_at = db.Column(db.DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
+
+    serialize_rules = ('id', 'body', 'username', 'created_at', 'updated_at')
